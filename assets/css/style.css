@@ -1,0 +1,155 @@
+body{
+	margin:0px;
+}
+
+#header{
+	width:100%;
+	height:126px;
+	background-color:#003478;
+	border-bottom:5px solid #781010;
+}
+
+#content{
+	width:100%;
+	height:700px;
+	background-color:#FFF;
+}
+#logo {
+	position: absolute;
+	width: 286px;
+	height: 85px;
+	z-index: 1;
+	background-image: url(../images/logo.png);
+	background-repeat: no-repeat;
+	top: 24px;
+	left: 20px;
+}
+
+#loanmanagementsystem {
+	position: absolute;
+	width: 186px;
+	height: 22px;
+	z-index: 2;
+	top: 94px;
+	left: 97px;
+	color: #FFF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+#visitkivandaboutlms {
+	position: absolute;
+	width: 177px;
+	height: 21px;
+	z-index: 3;
+	left: 1079px;
+	top: 91px;
+	color: #FFF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+.loanapplicationtextfields{
+	border:none;
+	background-color:#FFF;
+	height:25px;
+}
+
+.loanapplicationbuttons{
+	border:none;
+	background-color:#781010;
+	color:#FFF;
+	height:34px;
+}
+#leftbar{
+	position:relative;
+	float:left;
+	width:19.7%;
+	height:700px;
+	border-right:1px solid #CCC;
+}
+#rightbar{
+	position:relative;
+	float:right;
+	width:80%;
+	height:700px;
+	background-color:#f3f3f3;
+}
+#logincontainer {
+	position: absolute;
+	width: 566px;
+	height: 390px;
+	z-index: 4;
+	left: 357px;
+	top: 198px;
+	border-radius: 6px;
+	background-color: #e9e9e9;
+}
+#loginimg {
+	position: absolute;
+	width: 121px;
+	height: 115px;
+	z-index: 5;
+	background-image: url(images/user_login.png);
+	background-repeat: no-repeat;
+	left: 225px;
+	top: 12px;
+}
+#loginform {
+	position: absolute;
+	width: 399px;
+	height: 179px;
+	z-index: 5;
+	left: 100px;
+	top: 130px;
+	color: #636363;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+#user_img {
+	position: absolute;
+	width: 210px;
+	height: 85px;
+	z-index: 4;
+	left: 21px;
+	top: 3px;
+}
+#sidemenubar {
+	position: absolute;
+	width: 200px;
+	height: 344px;
+	z-index: 4;
+	top: 101px;
+	left: 21px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #003478;
+}
+#userlogindetails {
+	position: absolute;
+	width: 209px;
+	height: 89px;
+	z-index: 4;
+	color: #000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+#userdetails {
+	position: absolute;
+	width: 994px;
+	height: 531px;
+	z-index: 4;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 32px;
+	left: 6px;
+	border-bottom: 1px dotted #CCCCCC;
+}
+#changepassworddiv {
+	position: absolute;
+	width: 994px;
+	height: 244px;
+	z-index: 4;
+	left: 8px;
+	top: 138px;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+}

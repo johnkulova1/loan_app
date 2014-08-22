@@ -1,0 +1,28 @@
+Insert into IMPORT_COURSES (CLAVE,STUDENT_ID,NOMBRE_COMPLETO) values (8525,7474,'Certified Public Accountant(FT)');
+Insert into IMPORT_COURSES (CLAVE,STUDENT_ID,NOMBRE_COMPLETO) values (9299,6854,'Certified Public Accountant(FT)');
+Insert into IMPORT_COURSES (CLAVE,STUDENT_ID,NOMBRE_COMPLETO) values (10298,9185,'Certified Information Systems Auditor(EC)');
+Insert into IMPORT_COURSES (CLAVE,STUDENT_ID,NOMBRE_COMPLETO) values (7419,8594,'Bachelor of Commerce (FT)');
+Insert into IMPORT_COURSES (CLAVE,STUDENT_ID,NOMBRE_COMPLETO) values (9302,6857,'Association of Chartered Certified Accountants(FT)');
+Insert into IMPORT_COURSES (CLAVE,STUDENT_ID,NOMBRE_COMPLETO) values (48235,7472,'Certified Public Accountant(EC)');
+Insert into IMPORT_COURSES (CLAVE,STUDENT_ID,NOMBRE_COMPLETO) values (9297,6852,'Certified Public Accountant(FT)');
+Insert into IMPORT_COURSES (CLAVE,STUDENT_ID,NOMBRE_COMPLETO) values (7417,8592,'Bachelor of Commerce (FT)');
+Insert into IMPORT_COURSES (CLAVE,STUDENT_ID,NOMBRE_COMPLETO) values (9300,6855,'Association of Chartered Certified Accountants(FT)');
+Insert into IMPORT_COURSES (CLAVE,STUDENT_ID,NOMBRE_COMPLETO) values (9296,6851,'Certified Public Accountant(FT)');
+Insert into IMPORT_COURSES (CLAVE,STUDENT_ID,NOMBRE_COMPLETO) values (26673,9185,'Certified Public Accountant(FT)');
+Insert into IMPORT_COURSES (CLAVE,STUDENT_ID,NOMBRE_COMPLETO) values (8523,7472,'Certified Public Accountant(FT)');
+Insert into IMPORT_COURSES (CLAVE,STUDENT_ID,NOMBRE_COMPLETO) values (9301,6856,'Certified Public Accountant(FT)');
+Insert into IMPORT_COURSES (CLAVE,STUDENT_ID,NOMBRE_COMPLETO) values (10368,9255,'Certified Public Accountant(FT)');
+Insert into IMPORT_COURSES (CLAVE,STUDENT_ID,NOMBRE_COMPLETO) values (8521,7470,'Certified Public Accountant(EC)');
+Insert into IMPORT_COURSES (CLAVE,STUDENT_ID,NOMBRE_COMPLETO) values (8528,7477,'Certified Public Accountant(FT)');
+Insert into IMPORT_COURSES (CLAVE,STUDENT_ID,NOMBRE_COMPLETO) values (10394,9281,'Certified Public Accountant(FT)');
+Insert into IMPORT_COURSES (CLAVE,STUDENT_ID,NOMBRE_COMPLETO) values (7420,8595,'Bachelor of Commerce (FT)');
+Insert into IMPORT_COURSES (CLAVE,STUDENT_ID,NOMBRE_COMPLETO) values (67162,7472,'Certified Information Systems Auditor(EC)');
+Insert into IMPORT_COURSES (CLAVE,STUDENT_ID,NOMBRE_COMPLETO) values (85129,8595,'Certified Public Accountant(EC)');
+Insert into IMPORT_COURSES (CLAVE,STUDENT_ID,NOMBRE_COMPLETO) values (72618,8596,'Certified Public Accountant(EC)');
+Insert into IMPORT_COURSES (CLAVE,STUDENT_ID,NOMBRE_COMPLETO) values (8524,7473,'Certified Public Accountant(EC)');
+Insert into IMPORT_COURSES (CLAVE,STUDENT_ID,NOMBRE_COMPLETO) values (48490,7470,'Certified Public Accountant(DLC)');
+Insert into IMPORT_COURSES (CLAVE,STUDENT_ID,NOMBRE_COMPLETO) values (7418,8593,'Bachelor of Commerce (FT)');
+Insert into IMPORT_COURSES (CLAVE,STUDENT_ID,NOMBRE_COMPLETO) values (7421,8596,'Bachelor of Commerce (FT)');
+Insert into IMPORT_COURSES (CLAVE,STUDENT_ID,NOMBRE_COMPLETO) values (46423,5328,'Bachelor of Commerce (FT)');
+Insert into IMPORT_COURSES (CLAVE,STUDENT_ID,NOMBRE_COMPLETO) values (9298,6853,'Association of Chartered Certified Accountants(FT)');
+
