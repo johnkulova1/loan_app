@@ -93,7 +93,7 @@ function generatePlan(element) {
 	/*
 	 * Proceed to calculations
 	 */
-	if (rate != 0 && nPayments != 0 && penalty != 0 && pv != 0 && e.length != 0) {
+	if (rate != 0 && nPayments != 0/* && penalty != 0*/ && pv != 0 && e.length != 0) {
 		rate = (rate / 1200);
 		nPayments = (nPayments * 12);
 		mp = (-payment(rate, nPayments, pv, fv, t)).toFixed(2);
@@ -187,7 +187,7 @@ function generatePlan(element) {
 		}
 
 	}else{
-		alert('An error has occurred! Kindly use numbers only except zero');
+		alert('An error has occurred! Kindly use numbers only');
 		document.location.reload(true);
 	}
 }

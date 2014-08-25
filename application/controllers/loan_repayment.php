@@ -55,6 +55,7 @@ class Loan_repayment extends CI_Controller {
 		// $form_data = $this->input->post ();
 		$studId = $this->input->post ( 'inpStudentId' );
 		$counter = intval($this->input->post ( 'inpPayCount' ));
+		$finalArray =array();
 		$data = array (
 				'student_id' => $studId,
 				'amt_borrowed' => $this->input->post ( 'inpPV' ),
@@ -70,6 +71,7 @@ class Loan_repayment extends CI_Controller {
 				'user_id' => $this->session->userdata ( "fullnames" ),
 				'user_log_date' => unix_to_human ( time () ) 
 		);
+		$affected_rows = $this->loanRepModel->saveToDb1 ( $data);
 		for($i = 1; $i <=$counter;$i++){
 			$repayMonthId = $this->input->post('monthId_'.$i);
 			$repayMonth = $this->input->post('month_'.$i);
@@ -89,22 +91,27 @@ class Loan_repayment extends CI_Controller {
 					'opening_bal' => $openBal,
 					'closing_bal' => $closeBal,
 					'monthly_payment' => $monthlyPay,
+					'monthly_interest' => $monthlyInt,
 					'principle_amt' => $princAmt,
 					'due_date' => $dueDate
 			);
-			$finalArray =array();
-			$finalArray += $data2;
+			
+			//$finalArray .= $data2;
+			if($affected_rows > 0) 
+				$affected_rows = $this->loanRepModel->saveToDb2 ( $data2 );
 		}
 		
-		//$affected_rows = $this->loanRepModel->saveToDb ( $data,$data2 );
-		// echo $this->session->all_userdata();
-		//if ($affected_rows > 0) {
-		//	redirect ( 'loan_application_list' );
-		//} 
-		 $this->load->view("tmpl_header");
-		 $this->load->view("tmpl_leftbar");
-		 $this->load->view("post_success",$data);
-		 $this->load->view("tmpl_footer");
+		//$affected_rows = $this->loanRepModel->saveToDb ( $data,$finalArray );
+		 //echo $this->session->all_userdata();
+		if ($affected_rows > 0) {
+			redirect ( 'loan_application_list' );
+		}else{
+			$this->load->view("tmpl_header");
+			$this->load->view("tmpl_leftbar");
+			$this->load->view("post_fail");
+			$this->load->view("tmpl_footer");
+		} 
+		 
 	}
 }
 ?>

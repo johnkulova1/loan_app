@@ -25,11 +25,15 @@
 			$result=$this->db->query($query2,array($studentid));
 			return $result;
 		}
-		function saveToDb($data,$data2){	
+		function saveToDb1($data){	
 		$this->db->insert('student_loan_rates', $data);
 		$numRows = $this->db->affected_rows() > 0;
-		$this->db->insert('repayment_schedule', $data2);
 		return $numRows;
+		}
+		function saveToDb2($data2){
+			$this->db->insert('repayment_schedule', $data2);
+			$numRows = $this->db->affected_rows() > 0;
+			return $numRows;
 		}
  		function checkRepayments($studentid){
 			$query2 = "select * from student_loan_rates where student_id = ?";
