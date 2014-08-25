@@ -110,7 +110,7 @@
                         'style'=>'width:150px'
                         );
               echo form_submit($data);
-              echo form_hidden('loanapp_id',$row->_id);
+             // echo form_hidden('loanapp_id',$row->_id);
               ?>
             </td>
           </tr>

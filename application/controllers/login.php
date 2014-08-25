@@ -9,6 +9,12 @@ class Login extends CI_Controller{
 		$this->load->view('login');
 		$this->load->view('tmpl_footer');
 		$this->session->set_userdata("error", "");
+		$this->session->unset_userdata('email');
+		$this->session->unset_userdata('student_id');
+		$this->session->unset_userdata('fullnames');
+		$this->session->unset_userdata('image');
+		$this->session->unset_userdata('userlevel');
+		$this->session->unset_userdata('logged_in');
 	}
 	public function signin(){
 		$email_address=$this->input->post('username');

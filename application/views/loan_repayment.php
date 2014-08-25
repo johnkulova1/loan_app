@@ -90,7 +90,7 @@
 				type="button" name="btnGenerate" id="btnGenerate"
 				value="Generate repayment schedule" /> <span id="fieldAuditLog"></span></td>
 			<td style="border-style: none;" colspan="2" align="left">
-					<?php echo form_reset('inpReset','Reset','onclick="$(\'#btnGenerate\').attr(\'disabled\',\'false\');document.location.reload(true);" class="exclude"');?>
+					<?php echo form_reset('inpReset','Reset','onclick="$(\'#btnGenerate\').attr(\'disabled\',\'false\');location.reload();" class="exclude"');?>
 					<input class="exclude" onclick="amortizeAcademic(); return false;"
 				type="button" name="inpAmortize" id="inpAmortize"
 				value="Loan amortization" />
@@ -112,7 +112,7 @@
 			<th>Monthly interest</th>
 			<th>Principle amount</th>
 			<th>Closing balance</th>
-			<th>Repayment date</th>
+			<!-- <th>Repayment date</th> -->
 		</tr>
 	</table>
 	<!-- End of sectionData -->

@@ -24,7 +24,9 @@ class Student_application_form extends CI_Controller{
 		$signature_imagefilename=$this->upload_signature_picture($signature_field_name);
 		$this->load->model("Student_application_form_model","form_model");
 		$result=$this->form_model->register_student_details($profile_imagefilename, $idcard_image_front_filename, $idcard_image_back_filename, $signature_imagefilename, $father_pin_no, $mother_pin_no);
+		if($result){
 
+		}
 	}
 	public function upload_configurations(){
 		$config['upload_path'] ='assets/images/';

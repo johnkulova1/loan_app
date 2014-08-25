@@ -20,17 +20,24 @@
                       changeYear:true,
                       yearRange:'2014:2125',
                       showAnim: 'show',
-                duration: 'slow'
+                      duration: 'slow'
               });
-            
       });
-
-        
     </script>
-
 </head>
 <body>
-<div id="header">
+  <?php
+    $userlevel=$this->session->userdata("userlevel");
+    $color="#003478";
+    if($userlevel=="student"){
+      $color="#993322";
+    }
+    if($userlevel==""){
+      $color="#003478";
+    }
+    
+  ?>
+<div id="header" style="background-color:<?php echo $color; ?>">
   <div id="logo"></div>
   <div id="loanmanagementsystem">Loan Management System(LMS)</div>
   <div id="visitkivandaboutlms">

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 05, 2014 at 02:08 PM
+-- Generation Time: Aug 19, 2014 at 11:10 AM
 -- Server version: 5.5.38
 -- PHP Version: 5.3.10-1ubuntu3.13
 
@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `ams_student_account` (
 
 CREATE TABLE IF NOT EXISTS `ams_student_info` (
   `_id` int(11) NOT NULL AUTO_INCREMENT,
-  `student_id` text NOT NULL,
+  `student_id` int(10) NOT NULL,
   `email_address` text NOT NULL,
   `student_names` text NOT NULL,
   `national_idno` text NOT NULL,
@@ -99,9 +99,9 @@ CREATE TABLE IF NOT EXISTS `ams_student_info` (
 --
 
 INSERT INTO `ams_student_info` (`_id`, `student_id`, `email_address`, `student_names`, `national_idno`, `postal_address`, `course_applied_for`, `mean_grade`, `start_date`, `f_surname`, `f_othernames`, `f_idno`, `f_pin_no`, `f_postal_address`, `f_email_address`, `f_mobile_no`, `f_occupation`, `f_employer_name`, `m_surname`, `m_othernames`, `m_id_no`, `m_pin_no`, `m_postal_address`, `m_email_address`, `m_mobile_no`, `m_occupation`, `m_employer_name`, `g_surname`, `g_othernames`, `g_id_no`, `g_pin_no`, `g_postal_address`, `g_email_address`, `g_mobile_no`, `g_occupation`, `g_employer_name`, `g_relationship`) VALUES
-(1, '8592', 'jhnkulova@gmail.com', 'John Kulova', '25139625', 'P.O. BOX 29261 Kangemi', 'BBIT', '', '', 'Ngichabe', 'Christopher Kulova', '23445678', 'AESDF44REF', 'P.O. BOX 29261 Kangemi', 'cngichabe@gmail.com', '0720741352', 'Doctor', 'KARI', 'Kulova', 'Justine', '46655744', 'SDNNRJ656', 'P.O. BOX 29261 Kangemi', 'jkulova@gmail.com', '0716118889', 'Teacher', 'Retired', '', '', '', '', '', '', '', '', '', ''),
-(2, '049768', 'kelvin@gmail.com', 'Kelvin Yonga', '2345678', 'P.O.BOX 345 Nairobi', 'BBIT', '', '', 'Peter', 'Yonga', '1235686', 'AASDFEC', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(3, '023675', 'imueni@strathmore.edu', 'Imelda Mueni', '8789874', 'P.O BOX 33565 Nairobi', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
+(1, 8592, 'jhnkulova@gmail.com', 'John Kulova', '25139625', 'P.O. BOX 29261 Kangemi', 'BBIT', '', '', 'Ngichabe', 'Christopher Kulova', '23445678', 'AESDF44REF', 'P.O. BOX 29261 Kangemi', 'cngichabe@gmail.com', '0720741352', 'Doctor', 'KARI', 'Kulova', 'Justine', '46655744', 'SDNNRJ656', 'P.O. BOX 29261 Kangemi', 'jkulova@gmail.com', '0716118889', 'Teacher', 'Retired', '', '', '', '', '', '', '', '', '', ''),
+(2, 49768, 'kelvin@gmail.com', 'Kelvin Yonga', '2345678', 'P.O.BOX 345 Nairobi', 'BBIT', '', '', 'Peter', 'Yonga', '1235686', 'AASDFEC', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(3, 23675, 'imueni@strathmore.edu', 'Imelda Mueni', '8789874', 'P.O BOX 33565 Nairobi', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -320,8 +320,8 @@ INSERT INTO `IMPORT_INVOICES` (`id`, `course_id`, `person_id`, `student_id`, `in
 (23, 7418, 11057, 8593, 32735, 'Bachelor of Commerce (FT)', 'Tuition fees', 15300, NULL, 'EWAMBUI'),
 (24, 7418, 11057, 8593, 61671, 'Bachelor of Commerce (FT)', 'Graduation fees', 3000, NULL, 'BAMBANI'),
 (25, 7417, 11056, 8592, 6532, 'Bachelor of Commerce (FT)', 'Tuition fees', 101310, NULL, 'IMAKATIANI'),
-(26, 7417, 11056, 8592, 47060, 'Bachelor of Commerce (FT)', 'Tuition fees', 15300, NULL, 'EWAMBUI'),
-(27, 7418, 11057, 8593, 47062, 'Bachelor of Commerce (FT)', 'General administration fee', 600, NULL, 'NMUMBO'),
+(26, 7417, 11056, 49768, 47060, 'Bachelor of Commerce (FT)', 'Tuition fees', 15300, NULL, 'EWAMBUI'),
+(27, 7418, 11057, 49768, 47062, 'Bachelor of Commerce (FT)', 'General administration fee', 600, NULL, 'NMUMBO'),
 (28, 7420, 11059, 8595, 705, 'Bachelor of Commerce (FT)', 'Bank charges', 200, NULL, 'CNJUMWA'),
 (29, 7417, 11056, 8592, 0, 'Bachelor of Commerce (FT)', 'Tuition fees', 101420, NULL, 'ADMIN'),
 (30, 7417, 11056, 8592, 10709, 'Bachelor of Commerce (FT)', 'Tuition fees', 100210, NULL, 'AKAHINDI'),
@@ -411,7 +411,7 @@ INSERT INTO `IMPORT_RECEIPTS` (`id`, `course_id`, `person_id`, `student_id`, `re
 CREATE TABLE IF NOT EXISTS `loan_applications` (
   `_id` int(11) NOT NULL AUTO_INCREMENT,
   `category_id` int(11) NOT NULL,
-  `student_id` text NOT NULL,
+  `student_id` int(10) NOT NULL,
   `picture` text NOT NULL,
   `amount` int(100) NOT NULL,
   `kra_pin` text NOT NULL,
@@ -433,9 +433,9 @@ CREATE TABLE IF NOT EXISTS `loan_applications` (
 --
 
 INSERT INTO `loan_applications` (`_id`, `category_id`, `student_id`, `picture`, `amount`, `kra_pin`, `national_id`, `mother_pin_no`, `father_pin_no`, `idcard_front_image`, `idcard_back_image`, `signature_image`, `status`, `reason`, `terms_of_use`, `date_applied`) VALUES
-(1, 1, '8592', 'logo.jpg', 0, 'QWEWJDF9FN', '25139625', 'QWESDDERTTG', 'ASWEREDFD', 'id_front2.jpg', 'id_back2.jpg', 'google-app-inventor-icon-300x297.jpg', 'approved', '', '', '2014-07-30 08:17:01'),
-(2, 2, '049768', '', 0, 'AADRET55TFGG', '45546577', '', '', '', '', '', 'denied', 'The form is not complete. ', '', '2014-07-08 08:35:06'),
-(4, 1, '023675', 'icon.xpm', 0, 'AADRET55TFGG', '234456567', '12341', '1234', 'icon.xpm', 'icon.xpm', 'icon.xpm', 'denied', '', '', '2014-07-21 14:43:17');
+(1, 1, 8592, 'logo.jpg', 0, 'QWEWJDF9FN', '25139625', 'QWESDDERTTG', 'ASWEREDFD', 'id_front2.jpg', 'id_back2.jpg', 'google-app-inventor-icon-300x297.jpg', 'approved', '', '', '2014-07-30 08:17:01'),
+(2, 2, 49768, '', 0, 'AADRET55TFGG', '45546577', '', '', '', '', '', 'approved', 'The form is not complete. ', '', '2014-08-10 17:46:46'),
+(4, 1, 23675, 'icon.xpm', 0, 'AADRET55TFGG', '234456567', '12341', '1234', 'icon.xpm', 'icon.xpm', 'icon.xpm', 'denied', '', '', '2014-07-21 14:43:17');
 
 -- --------------------------------------------------------
 
@@ -519,7 +519,7 @@ CREATE TABLE IF NOT EXISTS `student_loan_rates` (
   `completed_ind` tinyint(1) NOT NULL DEFAULT '0',
   `expected_completion_date` datetime NOT NULL,
   `actual_completion_date` datetime NOT NULL,
-  `expected_start_date` datetime NOT NULL,
+  `expected_start_date` date NOT NULL,
   `actual_start_date` datetime NOT NULL,
   `amt_written_off` float DEFAULT '0',
   `user_id` int(15) NOT NULL,
@@ -551,7 +551,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`_id`, `full_names`, `email_address`, `password`, `image`, `phone_no`, `student_id`, `user_level`) VALUES
 (1, 'Lillian Munene', 'lilmunene@gmail.com', 'f5db465baa8c75fa4e4cf2171b85af27', '', '0728306203', '', 'admin'),
-(24, 'John Kulova', 'jhnkulova@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 'logo.jpg', '0712306203', '048655', 'student'),
+(24, 'John Kulova', 'jhnkulova@gmail.com', '2a92b401f527c2929203e2d6c6af9dff', 'logo.jpg', '0712306203', '048655', 'student'),
 (29, 'Andrew Mageto', 'andmageto@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '', '0728306203', '', 'fao'),
 (30, 'Kelvin Yonga', 'kevin@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 'kelvin.jpg', '0712306203', '049768', 'student'),
 (32, 'Imelda Mueni', 'imelda22@gmail.com', '7cdfe62a57af2536432e9ec553445884', 'icon.xpm', '0712306203', '023675', 'fao');
