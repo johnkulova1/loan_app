@@ -11,12 +11,10 @@ class Loan_repayment extends CI_Controller {
 	}
 	public function index() {
 		$studentid = $this->input->get ( "studentid" );
-		// TODO: check if the repayment plan has already been saved
 		$rpmnt = $this->checkRepayment ( $studentid );
 		
-		if ($rpmnt) {
+		if ($rpmnt) {//Data doesn't exist, display default layout
 			$result ['resultInvoices'] = $this->loanRepModel->getInvoices ( $studentid );
-			// append other results
 			// $this->loanRepModel->getReceipts($studentid);
 			$result ['resultReceipts'] = $this->loanRepModel->getReceipts ( $studentid );
 			$result ['studentId'] = $studentid;
@@ -33,13 +31,11 @@ class Loan_repayment extends CI_Controller {
 	public function checkRepayment($studentid) {
 		// check if the student's repayment plan already exists
 		$data = $this->loanRepModel->checkRepayments ( $studentid );
-		if($data['0'] > 0){
-			//TODO: Get the results and pass them to the inputs,then generateRepayment and hide div#tableHeader
-			//Get the data and pass it to the view
+		if($data['0'] > 0){// Data exists, return data from db
 			$result = array('result' => $data['1']); 
 			$this->load->view ( "tmpl_header" );
 			$this->load->view ( "tmpl_leftbar" );
-			$this->load->view ( "loan_repayment", $result );
+			$this->load->view ( "loan_repayment2", $result );
 			$this->load->view ( "tmpl_footer" );
 						
 			return false;

@@ -36,10 +36,16 @@
 			return $numRows;
 		}
  		function checkRepayments($studentid){
-			$query2 = "select * from student_loan_rates where student_id = ?";
+			$query2 = "select
+						 * 
+						from 
+						student_loan_rates s
+						inner join repayment_schedule r on (s.student_id=r.student_id)
+						where s.student_id = ?";
 			$result=$this->db->query($query2,array($studentid));
 			$numRows=$result->num_rows();
 			return array('0'=>$numRows,'1'=>$result);
 		} 
+		
 	}
 ?>
