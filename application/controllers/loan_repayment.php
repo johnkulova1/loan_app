@@ -1,6 +1,4 @@
-<?php
-if (! defined ( 'BASEPATH' ))
-	exit ( 'No direct script access allowed' );
+<?php if (! defined ( 'BASEPATH' ))exit ( 'No direct script access allowed' );
 class Loan_repayment extends CI_Controller {
 	public function __construct() {
 		parent::__construct ();
@@ -49,12 +47,11 @@ class Loan_repayment extends CI_Controller {
 		// $this->load->library('form_validation');
 		// echo 'Saving data..';
 		// $form_data = $this->input->post ();
-<<<<<<< HEAD
-=======
+
 		$studId = $this->input->post ( 'inpStudentId' );
 		$counter = intval($this->input->post ( 'inpPayCount' ));
 		$finalArray =array();
->>>>>>> upstream/master
+
 		$data = array (
 				'student_id' => $this->input->post ( 'inpStudentId' ),
 				'amt_borrowed' => $this->input->post ( 'inpPV' ),
@@ -70,10 +67,9 @@ class Loan_repayment extends CI_Controller {
 				'user_id' => $this->session->userdata ( "fullnames" ),
 				'user_log_date' => unix_to_human ( time () ) 
 		);
-<<<<<<< HEAD
+
 		for($i = 0; $i <=100;$i++){
 			
-=======
 		$affected_rows = $this->loanRepModel->saveToDb1 ( $data);
 		for($i = 1; $i <=$counter;$i++){
 			$repayMonthId = $this->input->post('monthId_'.$i);
@@ -102,7 +98,6 @@ class Loan_repayment extends CI_Controller {
 			//$finalArray .= $data2;
 			if($affected_rows > 0) 
 				$affected_rows = $this->loanRepModel->saveToDb2 ( $data2 );
->>>>>>> upstream/master
 		}
 		$data2 = array(
 			/* 	tdMonthId_Inp+='\'monthId_'+counter+'\' name=\'monthId_'+counter+'\'' ,
@@ -115,7 +110,7 @@ class Loan_repayment extends CI_Controller {
 				tdCB_Inp+='\'CB_'+counter+'\' name=\'CB_'+counter+'\'' ; */
 				
 		
-<<<<<<< HEAD
+
 		);
 		$affected_rows = $this->loanRepModel->saveToDb ( $data,$data2 );
 		// echo $this->session->all_userdata();
@@ -129,7 +124,7 @@ class Loan_repayment extends CI_Controller {
 		// $this->load->view("tmpl_leftbar");
 		// $this->load->view("post_success",$affected_rows);
 		// $this->load->view("tmpl_footer");
-=======
+
 		//$affected_rows = $this->loanRepModel->saveToDb ( $data,$finalArray );
 		 //echo $this->session->all_userdata();
 		if ($affected_rows > 0) {
@@ -140,8 +135,6 @@ class Loan_repayment extends CI_Controller {
 			$this->load->view("post_fail");
 			$this->load->view("tmpl_footer");
 		} 
-		 
->>>>>>> upstream/master
 	}
 }
-?>
+}
