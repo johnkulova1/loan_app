@@ -56,6 +56,7 @@ function validateInputs(myForm){
 	    return tr;
 	}
 
+<<<<<<< HEAD
 	function amortizeAcademic(){//get student performance and write off base on performance or write off completely
 		alert("Work In Progress!!");
 		
@@ -64,6 +65,46 @@ function validateInputs(myForm){
 	function generatePlan(element){
 		//deactivate the button
 		element.disabled=true;
+=======
+}
+//STARTS HERE: Generate repayment plan schedule
+function generatePlan(element) {
+	//deactivate the button
+	element.disabled = true;
+	/*
+	 * Initializing variables
+	 */
+	var a = $('input#inpAPR').val(), b = $('input#inpNMONTHS').val(), c = $(
+			'input#inpPenalty').val(), d = $('input#inpPV').val(), e = $(
+			'input#inpPayOn').val(), startDate = e.split('-')[2], startMonth = e
+			.split('-')[1], startYear = e.split('-')[0], t = 0, // amount due at
+	// end of period
+	mp = 0, fv = 0, totalInt = 0, re = new RegExp(/^\d*\.?\d*$/), rate = re
+			.test(a) ? a : 0, nPayments = re.test(b) ? b : 0, penalty = re
+			.test(c) ? c : 0, pv = re.test(d) ? d : 0, counter = 0, enumMONTHS = {
+		JANUARY : 1,
+		FEBUARY : 2,
+		MARCH : 3,
+		APRIL : 4,
+		MAY : 5,
+		JUNE : 6,
+		JULY : 7,
+		AUGUST : 8,
+		SEPTEMBER : 9,
+		OCTOBER : 10,
+		NOVEMBER : 11,
+		DECEMBER : 12
+	};
+	/*
+	 * Proceed to calculations
+	 */
+	if (rate != 0 && nPayments != 0/* && penalty != 0*/ && pv != 0 && e.length != 0) {
+		rate = (rate / 1200);
+		nPayments = (nPayments * 12);
+		mp = (-payment(rate, nPayments, pv, fv, t)).toFixed(2);
+		fv = (mp * nPayments).toFixed(2);
+		totalInt = (fv - pv).toFixed(2);
+>>>>>>> upstream/master
 		/*
 		* Initializing variables
 		*/
@@ -168,4 +209,49 @@ function validateInputs(myForm){
 				}
 			
 			}
+<<<<<<< HEAD
 	}
+=======
+			tdMP = mp;
+			tdMI = (tdOB * rate).toFixed(2);
+			tdPrinciple = (tdMP - tdMI).toFixed(2);
+			tdCB = (tdOB - tdPrinciple).toFixed(2);
+			//set the repayment table ids and names
+			tdMonthId_Inp += '\'monthId_' + counter + '\' name=\'monthId_'
+			+ counter + '\'', tdMonth_Inp += '\'month_' + counter
+			+ '\' name=\'month_' + counter + '\'',
+			tdYear_Inp += '\'year_' + counter + '\' name=\'year_'
+			+ counter + '\'', tdOB_Inp += '\'OB_' + counter
+			+ '\' name=\'OB_' + counter + '\'',
+			tdMP_Inp += '\'MP_' + counter + '\' name=\'MP_' + counter
+			+ '\'', tdMI_Inp += '\'MI_' + counter
+			+ '\' name=\'MI_' + counter + '\'',
+			tdPrinciple_Inp += '\'Principle_' + counter
+			+ '\' name=\'Principle_' + counter + '\'',
+			tdCB_Inp += '\'CB_' + counter + '\' name=\'CB_' + counter
+			+ '\'', tdMPDate_Inp += '\'MPDate_' + counter
+			+ '\' name=\'MPDate_' + counter + '\'';
+			//set the repayment table values
+			tdMonthId_Inp += '>' + tdMonthId + '</textarea>',
+			tdMonth_Inp += '>' + tdMonth + '</textarea>',
+			tdYear_Inp += '>' + tdYear + '</textarea>', tdOB_Inp += '>'
+				+ tdOB + '</textarea>', tdMP_Inp += '>' + tdMP
+				+ '</textarea>', tdMI_Inp += '>' + tdMI
+				+ '</textarea>', tdPrinciple_Inp += '>'
+					+ tdPrinciple + '</textarea>', tdCB_Inp += '>'
+						+ tdCB + '</textarea>', tdMPDate_Inp += '>'
+							+ tdMPDate + '</textarea>';
+
+			//console.log(tdMonthId_Inp, tdMonth_Inp, tdYear_Inp, tdOB_Inp,tdMP_Inp,/*tdActualAmt,tdPenalty,tdAmortization,*/
+			//		tdMI_Inp,tdPrinciple_Inp,tdCB_Inp/*,tdMPDate*/);
+			table.innerHTML += createProviderFormFields(tdMonthId_Inp,
+					tdMonth_Inp, tdYear_Inp, tdOB_Inp, tdMP_Inp,/*tdActualAmt,tdPenalty,tdAmortization,*/
+					tdMI_Inp, tdPrinciple_Inp, tdCB_Inp, tdMPDate_Inp);
+		}
+
+	}else{
+		alert('An error has occurred! Kindly use numbers only');
+		document.location.reload(true);
+	}
+}
+>>>>>>> upstream/master

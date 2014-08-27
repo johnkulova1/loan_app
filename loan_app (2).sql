@@ -3,7 +3,11 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
+<<<<<<< HEAD
 -- Generation Time: Aug 19, 2014 at 11:10 AM
+=======
+-- Generation Time: Aug 25, 2014 at 03:41 PM
+>>>>>>> upstream/master
 -- Server version: 5.5.38
 -- PHP Version: 5.3.10-1ubuntu3.13
 
@@ -486,20 +490,51 @@ CREATE TABLE IF NOT EXISTS `loan_schedules` (
 CREATE TABLE IF NOT EXISTS `repayment_schedule` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `student_id` int(10) NOT NULL,
+  `repayment_month_id` int(4) NOT NULL,
   `repayment_month` enum('JANUARY','FEBRUARY','MARCH','APRIL','MAY','JUNE','JULY','AUGUST','SEPTEMBER','OCTOBER','NOVEMBER','DECEMBER') COLLATE utf8_unicode_ci NOT NULL,
   `repayment_year` enum('2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025') COLLATE utf8_unicode_ci NOT NULL,
   `opening_bal` float NOT NULL,
   `closing_bal` float NOT NULL,
   `monthly_payment` float NOT NULL,
   `monthly_interest` float NOT NULL,
-  `priciple_amt` float NOT NULL,
+  `principle_amt` float NOT NULL,
   `penalty` float DEFAULT NULL,
   `amortized_amt` float DEFAULT NULL,
   `due_date` datetime NOT NULL,
   `date_received` datetime NOT NULL,
   `received_by` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`,`student_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=26 ;
+
+--
+-- Dumping data for table `repayment_schedule`
+--
+
+INSERT INTO `repayment_schedule` (`id`, `student_id`, `repayment_month_id`, `repayment_month`, `repayment_year`, `opening_bal`, `closing_bal`, `monthly_payment`, `monthly_interest`, `principle_amt`, `penalty`, `amortized_amt`, `due_date`, `date_received`, `received_by`) VALUES
+(2, 8592, 1, 'AUGUST', '2014', 1000000, 959126, 42540.3, 1666.67, 40873.6, NULL, NULL, '2014-08-25 00:00:00', '0000-00-00 00:00:00', ''),
+(3, 8592, 2, 'SEPTEMBER', '2014', 959126, 918185, 42540.3, 1598.54, 40941.7, NULL, NULL, '2014-09-25 00:00:00', '0000-00-00 00:00:00', ''),
+(4, 8592, 3, 'OCTOBER', '2014', 918185, 877175, 42540.3, 1530.31, 41009.9, NULL, NULL, '2014-10-25 00:00:00', '0000-00-00 00:00:00', ''),
+(5, 8592, 4, 'NOVEMBER', '2014', 877175, 836096, 42540.3, 1461.96, 41078.3, NULL, NULL, '2014-11-25 00:00:00', '0000-00-00 00:00:00', ''),
+(6, 8592, 5, 'DECEMBER', '2014', 836096, 794950, 42540.3, 1393.49, 41146.8, NULL, NULL, '2014-12-25 00:00:00', '0000-00-00 00:00:00', ''),
+(7, 8592, 6, 'JANUARY', '2015', 794950, 753734, 42540.3, 1324.92, 41215.3, NULL, NULL, '2014-01-25 00:00:00', '0000-00-00 00:00:00', ''),
+(8, 8592, 7, '', '2015', 753734, 712450, 42540.3, 1256.22, 41284, NULL, NULL, '2014-02-25 00:00:00', '0000-00-00 00:00:00', ''),
+(9, 8592, 8, 'MARCH', '2015', 712450, 671097, 42540.3, 1187.42, 41352.8, NULL, NULL, '2014-03-25 00:00:00', '0000-00-00 00:00:00', ''),
+(10, 8592, 9, 'APRIL', '2015', 671097, 629676, 42540.3, 1118.5, 41421.8, NULL, NULL, '2014-04-25 00:00:00', '0000-00-00 00:00:00', ''),
+(11, 8592, 10, 'MAY', '2015', 629676, 588185, 42540.3, 1049.46, 41490.8, NULL, NULL, '2014-05-25 00:00:00', '0000-00-00 00:00:00', ''),
+(12, 8592, 11, 'JUNE', '2015', 588185, 546625, 42540.3, 980.31, 41559.9, NULL, NULL, '2014-06-25 00:00:00', '0000-00-00 00:00:00', ''),
+(13, 8592, 12, 'JULY', '2015', 546625, 504996, 42540.3, 911.04, 41629.2, NULL, NULL, '2014-07-25 00:00:00', '0000-00-00 00:00:00', ''),
+(14, 8592, 13, 'AUGUST', '2015', 504996, 463297, 42540.3, 841.66, 41698.6, NULL, NULL, '2014-08-25 00:00:00', '0000-00-00 00:00:00', ''),
+(15, 8592, 14, 'SEPTEMBER', '2015', 463297, 421529, 42540.3, 772.16, 41768.1, NULL, NULL, '2014-09-25 00:00:00', '0000-00-00 00:00:00', ''),
+(16, 8592, 15, 'OCTOBER', '2015', 421529, 379691, 42540.3, 702.55, 41837.7, NULL, NULL, '2014-10-25 00:00:00', '0000-00-00 00:00:00', ''),
+(17, 8592, 16, 'NOVEMBER', '2015', 379691, 337784, 42540.3, 632.82, 41907.4, NULL, NULL, '2014-11-25 00:00:00', '0000-00-00 00:00:00', ''),
+(18, 8592, 17, 'DECEMBER', '2015', 337784, 295807, 42540.3, 562.97, 41977.3, NULL, NULL, '2014-12-25 00:00:00', '0000-00-00 00:00:00', ''),
+(19, 8592, 18, 'JANUARY', '2016', 295807, 253759, 42540.3, 493.01, 42047.2, NULL, NULL, '2014-01-25 00:00:00', '0000-00-00 00:00:00', ''),
+(20, 8592, 19, '', '2016', 253759, 211642, 42540.3, 422.93, 42117.3, NULL, NULL, '2014-02-25 00:00:00', '0000-00-00 00:00:00', ''),
+(21, 8592, 20, 'MARCH', '2016', 211642, 169454, 42540.3, 352.74, 42187.5, NULL, NULL, '2014-03-25 00:00:00', '0000-00-00 00:00:00', ''),
+(22, 8592, 21, 'APRIL', '2016', 169454, 127197, 42540.3, 282.42, 42257.8, NULL, NULL, '2014-04-25 00:00:00', '0000-00-00 00:00:00', ''),
+(23, 8592, 22, 'MAY', '2016', 127197, 84868.4, 42540.3, 211.99, 42328.3, NULL, NULL, '2014-05-25 00:00:00', '0000-00-00 00:00:00', ''),
+(24, 8592, 23, 'JUNE', '2016', 84868.4, 42469.6, 42540.3, 141.45, 42398.8, NULL, NULL, '2014-06-25 00:00:00', '0000-00-00 00:00:00', ''),
+(25, 8592, 24, 'JULY', '2016', 42469.6, 0.08, 42540.3, 70.78, 42469.5, NULL, NULL, '2014-07-25 00:00:00', '0000-00-00 00:00:00', '');
 
 -- --------------------------------------------------------
 
@@ -525,7 +560,14 @@ CREATE TABLE IF NOT EXISTS `student_loan_rates` (
   `user_id` int(15) NOT NULL,
   `user_log_date` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `student_loan_rates`
+--
+
+INSERT INTO `student_loan_rates` (`id`, `student_id`, `amt_borrowed`, `monthly_payment`, `loan_amt`, `interest_paid`, `interest_rate`, `loan_period_months`, `completed_ind`, `expected_completion_date`, `actual_completion_date`, `expected_start_date`, `actual_start_date`, `amt_written_off`, `user_id`, `user_log_date`) VALUES
+(5, 8592, 1000000, 42540, 1020970, 20966.2, 2, 2, -1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '2014-08-25', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
